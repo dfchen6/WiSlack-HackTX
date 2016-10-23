@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<h1>This is HackTX</h1>
+
+<ul>
+	{% for channel in channels %}
+		<li>{{ channel['name'] }}</li>
+	{% endfor %}
+</ul>
