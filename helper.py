@@ -1,6 +1,7 @@
 import re
 
-def split_words(s, key_words):
+def split_words(message, s, key_words):
+	print(message)
 	words = re.findall(r'\S+', s)
 	result = []
 	for word in words:

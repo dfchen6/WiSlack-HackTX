@@ -19,9 +19,9 @@ def get_channel(name):
 	key_words = get_key_word(texts)
 	organized = []
 	for i in range(0, len(key_words)):
-		organized.append(split_words(texts[i], key_words[i]))
-	print(organized)
-	#print(key_words)
+		organized.append(split_words(history[i], texts[i], key_words[i]))
+
+
 	return render_template("channel.html", name = name, history = history, key_words = key_words, organized = organized)
 
 @app.route('/channels')

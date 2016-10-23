@@ -2,12 +2,12 @@ body {
 	background-color: #4D394B;
 }
 
-.box2 {
-  display: inline-block !important;
-}
-
 #main-title1 {
 	color: white;
+	text-align: center;
+}
+
+#channel-title {
 	text-align: center;
 }
 
