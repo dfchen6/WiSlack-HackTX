@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <title>Home</title>
 
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 
-<h1>This is HackTX!!!</h1>
+<h1 id='main-title1'>All Channels!</h1>
 
-<div class="container">
+<div class="container" id = "channels-list">
 {% for channel in channels %}
-	<a href="{{ "channels/" + channel['name']}}" class="list-group-item"> {{ channel['name'] }} </a>
+	<a href="{{ "channels/" + channel['name']}}" class="list-group-item"> {{ "#" + channel['name'] }} </a>
 {% endfor %}
 </div>

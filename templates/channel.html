@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <title>Welcome to Slack</title>
 <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"> -->
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+<!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}"> -->
 <h1>
 	This is channel {{ name }}!
 </h1>
 
-
-{% for message in history %}
-	<li> {{ message['text'] }} </li>
+{% for message in organized %}
+	<li>
+		{% for word in message %}
+			{% if word['is_key'] %}
+	                <mark>{{ word['val'] + " "}}</mark>
+	            {% else %}
+	                {{ word['val'] + " "}}
+	        {% endif %}
+		{% endfor %}
+	</li>
 {% endfor %}
 

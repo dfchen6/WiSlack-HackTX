@@ -3,7 +3,7 @@ import time
 from multiprocessing import Pool
 from slackclient import SlackClient
 
-SLACK_TOKEN = os.environ.get('SLACK_TOKEN')
+SLACK_TOKEN = "xoxp-89077229511-89077924401-94985752357-7e62c2e0cb29705decdb59a3d7baddf9"
 
 slack_client = SlackClient(SLACK_TOKEN)
 
@@ -34,15 +34,3 @@ def list_channel_history_by_name(channel_name):
         if (channel['name'] == channel_name):
             return list_channel_history(channel['id'])
     return None
-
-if __name__ == '__main__':
-    channels = list_channels()
-    if channels:
-        print("Channels: ")
-        for c in channels:
-            print(c['name'] + " (" + c['id'] + ")")
-            if c['name'] == 'hackathon':
-            	pool = Pool(processes=1)
-            	print(pool.map(list_channel_history, [c['id']]))
-    else:
-        print("Unable to authenticate.")

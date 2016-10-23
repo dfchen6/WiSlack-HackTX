@@ -2,6 +2,16 @@ body {
 	background-color: #4D394B;
 }
 
-h1 {
-	color: yellow;
+.box2 {
+  display: inline-block !important;
 }
+
+#main-title1 {
+	color: white;
+	text-align: center;
+}
+
+#channels-list {
+	font-size: 20px;
+}
+
