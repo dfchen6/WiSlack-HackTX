@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <title>Welcome to Slack</title>
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+<!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"> -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
 <h1>
 	This is channel {{ name }}!
-	{% for message in history %}
-		<li> {{ message['text'] }} </li>
-	{% endfor %}
 </h1>
+
+
+{% for message in history %}
+	<li> {{ message['text'] }} </li>
+{% endfor %}
+

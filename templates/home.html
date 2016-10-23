@@ -1,8 +1,13 @@
 <!DOCTYPE html>
-<h1>This is HackTX</h1>
+<title>Home</title>
 
-<ul>
-	{% for channel in channels %}
-		<li> <a href="{{ "channels/" + channel['name']}}"> {{ channel['name'] }} </a> </li>
-	{% endfor %}
-</ul>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+
+<h1>This is HackTX!!!</h1>
+
+<div class="container">
+{% for channel in channels %}
+	<a href="{{ "channels/" + channel['name']}}" class="list-group-item"> {{ channel['name'] }} </a>
+{% endfor %}
+</div>
