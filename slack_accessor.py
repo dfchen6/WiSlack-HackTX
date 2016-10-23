@@ -23,12 +23,17 @@ def send_message(channel_id, message):
     )
 
 def list_channel_history(channel_id):
-	history = slack_client.api_call(
-		"channels.history",
-		channel=channel_id,
-		count=3)
-	#time.sleep(1)
-	return history
+    history_call = slack_client.api_call("channels.history",channel=channel_id)
+    if history_call.get('ok'):
+        return history_call['messages']
+    return None
+
+def list_channel_history_by_name(channel_name):
+    channels = list_channels()
+    for channel in channels:
+        if (channel['name'] == channel_name):
+            return list_channel_history(channel['id'])
+    return None
 
 if __name__ == '__main__':
     channels = list_channels()

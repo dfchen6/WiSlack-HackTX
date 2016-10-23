@@ -3,4 +3,7 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 <h1>
 	This is channel {{ name }}!
+	{% for message in history %}
+		<li> {{ message['text'] }} </li>
+	{% endfor %}
 </h1>
